@@ -1,0 +1,12 @@
+[gd_scene load_steps=3 format=3 uid="uid://bs3wxggwsgxnk"]
+
+[ext_resource type="Script" path="res://scripts/grid.gd" id="1_ipqhe"]
+[ext_resource type="Script" path="res://scripts/snake.gd" id="2_d0wr0"]
+
+[node name="world" type="Node2D"]
+
+[node name="grid" type="Node2D" parent="."]
+script = ExtResource("1_ipqhe")
+
+[node name="snake" type="Node2D" parent="."]
+script = ExtResource("2_d0wr0")

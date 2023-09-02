@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://bs3wxggwsgxnk"]
+[gd_scene load_steps=4 format=3 uid="uid://bs3wxggwsgxnk"]
 
 [ext_resource type="Script" path="res://scripts/grid.gd" id="1_ipqhe"]
 [ext_resource type="Script" path="res://scripts/snake.gd" id="2_d0wr0"]
+[ext_resource type="Script" path="res://scripts/food.gd" id="3_y5mjc"]
 
 [node name="world" type="Node2D"]
 
@@ -9,4 +10,8 @@
 script = ExtResource("1_ipqhe")
 
 [node name="snake" type="Node2D" parent="."]
+unique_name_in_owner = true
 script = ExtResource("2_d0wr0")
+
+[node name="food" type="Node2D" parent="."]
+script = ExtResource("3_y5mjc")

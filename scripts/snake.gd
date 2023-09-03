@@ -59,6 +59,7 @@ func grow():
 	var init = Part.new()
 	init.current_position = (parts.back() as Part).current_position
 	
+	Game.score += 10
 	parts.push_back(init)
 	
 func intersects(init: Vector2)->bool:

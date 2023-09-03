@@ -1,8 +1,17 @@
-[gd_scene load_steps=4 format=3 uid="uid://bs3wxggwsgxnk"]
+[gd_scene load_steps=8 format=3 uid="uid://bs3wxggwsgxnk"]
 
 [ext_resource type="Script" path="res://scripts/grid.gd" id="1_ipqhe"]
 [ext_resource type="Script" path="res://scripts/snake.gd" id="2_d0wr0"]
 [ext_resource type="Script" path="res://scripts/food.gd" id="3_y5mjc"]
+[ext_resource type="Theme" uid="uid://mytrrppg5nak" path="res://fonts/themes/score.tres" id="4_5kf2k"]
+[ext_resource type="Script" path="res://scenes/label.gd" id="5_e0eu2"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gyqwv"]
+bg_color = Color(0.72549, 0.709804, 0.764706, 0.776471)
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="LabelSettings" id="LabelSettings_3n3r7"]
 
 [node name="world" type="Node2D"]
 
@@ -15,3 +24,24 @@ script = ExtResource("2_d0wr0")
 
 [node name="food" type="Node2D" parent="."]
 script = ExtResource("3_y5mjc")
+
+[node name="Hub" type="CanvasLayer" parent="."]
+
+[node name="Label" type="Label" parent="Hub"]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -50.0
+offset_right = 50.0
+offset_bottom = 40.0
+grow_horizontal = 2
+size_flags_horizontal = 4
+theme = ExtResource("4_5kf2k")
+theme_override_font_sizes/font_size = 100
+theme_override_styles/normal = SubResource("StyleBoxFlat_gyqwv")
+text = "Score: 0"
+label_settings = SubResource("LabelSettings_3n3r7")
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("5_e0eu2")
+metadata/_edit_use_anchors_ = true

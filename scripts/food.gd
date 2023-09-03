@@ -8,14 +8,14 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	var is_on_occupied_position = snake.intersects(Rect2(current_position, Vector2(Game.CELL_SIZE, Game.CELL_SIZE)))
-	if(is_on_occupied_position):
+	var has_eaten = snake.eaten(current_position)
+	if has_eaten:
 		snake.grow()
 		spawn()
 	queue_redraw()
 
 func _draw():
-	draw_rect(Rect2(current_position, Vector2(Game.CELL_SIZE, Game.CELL_SIZE)), Colors.BLUE)
+	draw_rect(Rect2(current_position, Vector2(Game.CELL_SIZE, Game.CELL_SIZE)), Colors.BLUE_SKY)
 	
 func spawn():
 	var is_on_occupied_position = true
@@ -26,5 +26,4 @@ func spawn():
 		random_position.y = randi_range(0, Game.CELL_AMOUNT.y - 1)
 		
 		current_position = random_position * Game.CELL_SIZE
-		is_on_occupied_position = snake.intersects(Rect2(current_position, Vector2(Game.CELL_SIZE, Game.CELL_SIZE)))
-	
+		is_on_occupied_position = snake.intersects(current_position)
